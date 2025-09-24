@@ -16,6 +16,11 @@ class TestPortalSettings:
             ["plone.smtp_host", "localhost"],
             ["plone.smtp_port", 25],
             ["plone.navigation_depth", 4],
+            ["plone.default_language", "pt-br"],
+            ["plone.available_languages", ["pt-br"]],
+            ["plone.portal_timezone", "America/Sao_Paulo"],
+            ["plone.available_timezones", ["America/Sao_Paulo"]],
+            ["plone.twitter_username", "plone"],
         ],
     )
     def test_setting(self, portal, key: str, expected: str | int):

@@ -57,10 +57,10 @@ class IArea(model.Schema):
         required=False,
         default="",
     )
-    estado = schema.TextLine(
+    estado = schema.Choice(
         title=_("Estado"),
+        vocabulary="tremt.intranet.vocabulary.estados",
         required=False,
-        default="",
     )
     cep = schema.TextLine(
         title=_("CEP"),

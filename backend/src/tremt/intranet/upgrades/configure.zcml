@@ -55,4 +55,15 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="tremt.intranet:default"
+      source="20250926001"
+      destination="20250926002"
+      >
+    <genericsetup:upgradeDepends
+        title="Adiciona o tipo Pessoa"
+        import_steps="typeinfo rolemap"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>

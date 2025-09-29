@@ -13,4 +13,9 @@
 
   </configure>
 
+  <permission
+      id="tremt.intranet.pessoa.add"
+      title="tremt.intranet: Add Pessoa"
+      />
+
 </configure>

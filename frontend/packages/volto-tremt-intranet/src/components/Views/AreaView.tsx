@@ -5,7 +5,7 @@ import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import type { Area } from '../../types/content';
 
 import ContactInfo from '../ContactInfo/ContactInfo';
-import AddressInfo from '../AddressInfo/AddressInfo';
+import AddressInfo from '../EnderecoInfo/EnderecoInfo';
 
 interface AreaViewProps {
   content: Area;

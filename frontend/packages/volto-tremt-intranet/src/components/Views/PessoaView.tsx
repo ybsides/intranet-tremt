@@ -2,7 +2,7 @@ import React from 'react';
 import Image from '@plone/volto/components/theme/Image/Image';
 import { Container } from '@plone/components';
 import ContactInfo from '../ContactInfo/ContactInfo';
-import EnderecoInfo from '../AddressInfo/AddressInfo';
+import EnderecoInfo from '../EnderecoInfo/EnderecoInfo';
 import type { Pessoa } from '../../types/content';
 
 interface PessoaViewProps {
@@ -26,6 +26,11 @@ const PessoaView: React.FC<PessoaViewProps> = (props) => {
             responsive={true}
           />
         </Container>
+      )}
+      {content.cargo && (
+        <span className={`cargo cargo-${content.cargo.token}`}>
+          {content.cargo.title}
+        </span>
       )}
       <h1 className="documentFirstHeading">{content.title}</h1>
       {content.description && (

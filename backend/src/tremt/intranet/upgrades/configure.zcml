@@ -66,4 +66,18 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="tremt.intranet:default"
+      source="20250926002"
+      destination="20250929001"
+      >
+    <genericsetup:upgradeDepends
+        title="Indexa os campos Area e Cargo "
+        import_steps="catalog"
+        />
+    <upgradeStep
+        title="Reindexa o tipo Pessoa"
+        handler=".catalog.reindexa_pessoa"
+        />
+  </genericsetup:upgradeSteps>
 </configure>

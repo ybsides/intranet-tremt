@@ -2,32 +2,39 @@ import React from 'react';
 import { Container } from '@plone/components';
 import type { Area } from '../../types/content';
 
-interface AddressInfoProps {
+interface EnderecoInfoProps {
   content: Area;
 }
 
-const AddressInfo: React.FC<AddressInfoProps> = ({ content }) => {
+const EnderecoInfo: React.FC<EnderecoInfoProps> = ({ content }) => {
   const { endereco, complemento, cidade, estado, cep } = content;
-
   return (
-    <Container narrow className="address">
-      <Container className="endereco">
-        <span>Endereço</span>: <span>{endereco}</span>
-      </Container>
-      <Container className="complemento">
-        <span>Complemento</span>: <span>{complemento}</span>
-      </Container>
-      <Container className="cidade">
-        <span>Cidade</span>: <span>{cidade}</span>
-      </Container>
-      <Container className="estado">
-        <span>Estado</span>: <span>{estado.token}</span>
-      </Container>
-      <Container className="cep">
-        <span>CEP</span>: <span>{cep}</span>
-      </Container>
+    <Container narrow className={'endereco-info'}>
+      {endereco && (
+        <Container>
+          <span className="endereco">{endereco}</span>
+        </Container>
+      )}
+      {complemento && (
+        <Container>
+          <span className="complemento">{complemento}</span>
+        </Container>
+      )}
+      {cidade && estado && (
+        <Container>
+          <span className="cidade">{cidade}</span> {' - '}
+          <span className={`estado estado-${estado.token}`}>
+            {estado.token}
+          </span>
+        </Container>
+      )}
+      {cep && (
+        <Container>
+          <span className="cep">{cep}</span>
+        </Container>
+      )}
     </Container>
   );
 };
 
-export default AddressInfo;
+export default EnderecoInfo;
